@@ -1,0 +1,24 @@
+# Support Ticket Desk - Notes
+
+## 1. Which state lives in Redux, which in Context, which in local component state, and why.
+
+Redux is used for manage tickets and shared the data between components
+
+context is used at them to be shared between components instead of passing it vaia props
+
+## 2. How your optimistic update and rollback work, step by step.
+
+If the status changed for example from open to closed . the new value appeared at the ui before getting successful response from the API . if the api failed apply rollback in the ui
+
+
+## 3. Why your filter selectors are memoized, and what would happen without createSelector.
+It used to filter tickets and calculate status counts.
+It remembers the previous result and avoids unnecessary calculations
+when the input data has not changed.
+
+Without memoization, filtering could create a new array on every
+selector execution, potentially causing unnecessary component
+re-renders.
+
+## 4. One thing to be improved if i have time ?
+If I have more time, I would improve the UI, add more features, and remove duplicated data by using the mock API and shared types consistently across the application.
